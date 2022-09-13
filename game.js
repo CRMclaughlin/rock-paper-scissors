@@ -1,14 +1,59 @@
+var keepPlaying = true
+var wins = 0
+var loss = 0
+var tie = 0
+
+while(keepPlaying)
 // define array for choices [ r, p, s]
-// define array for computerCchoice
-// define var for playerChoice
+var choices = ["r", "p", "s"]
+
+var rand = Math.floor(Math.random() * choices.length)
 
 //prompt() playerChoice
+var playerChoice = prompt("Please choose r, p, or s")
+console.log ("Player choice:", playerChoice)
+
+// define array for computerchoice
+var computerChoice =choices [rand]
+console.log("Computer choice:", computerChoice)
+
+var result
+
+if (playerChoice === computerChoice) {
+    tie++
+    result = "tied 🙈"
+} else if (
+    playerChoice === "r" && computerChoice === "s" ||    playerChoice === "s" && computerChoice === "p" || 
+    playerChoice === "p" && computerChoice === "r"
+    ){
+        wins++
+        result = "Won! 🍾"
+    } else {
+        loss++
+        result = "lost 😿"
+    }
+
+alert ("You " + result)
+
+alert("Stats: \nWins: " + wins + "Losses: \nLosses " + loss + "Ties: \nTies" + tie)
+
+keepPlaying = confirm("Want to play again")
+
+// if playerChoice is not equal to "r" "p" "s" then print you lose
 
 //randomly choose computerChoice
 
+
+    
+
+
+
+    
 //compare choices 
 
 //display (alert) results ("won, tied, lost round")
+
+
 
 // show stats (number of wins, losses, ties)
 
