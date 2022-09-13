@@ -1,9 +1,10 @@
-var keepPlaying = true
+
 var wins = 0
 var loss = 0
 var tie = 0
+var keepPlaying = true
 
-while(keepPlaying)
+while(keepPlaying){
 // define array for choices [ r, p, s]
 var choices = ["r", "p", "s"]
 
@@ -15,7 +16,7 @@ console.log ("Player choice:", playerChoice)
 
 // define array for computerchoice
 var computerChoice =choices [rand]
-console.log("Computer choice:", computerChoice)
+alert("Computer chose " + computerChoice )
 
 var result
 
@@ -23,7 +24,8 @@ if (playerChoice === computerChoice) {
     tie++
     result = "tied 🙈"
 } else if (
-    playerChoice === "r" && computerChoice === "s" ||    playerChoice === "s" && computerChoice === "p" || 
+    playerChoice === "r" && computerChoice === "s" ||    
+    playerChoice === "s" && computerChoice === "p" || 
     playerChoice === "p" && computerChoice === "r"
     ){
         wins++
@@ -35,9 +37,11 @@ if (playerChoice === computerChoice) {
 
 alert ("You " + result)
 
-alert("Stats: \nWins: " + wins + "Losses: \nLosses " + loss + "Ties: \nTies" + tie)
+alert("Stats: \nWins: " + wins + " \nLosses " + loss + " \nTies" + tie)
+
 
 keepPlaying = confirm("Want to play again")
+}
 
 // if playerChoice is not equal to "r" "p" "s" then print you lose
 
