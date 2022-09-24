@@ -1,85 +1,55 @@
-var humanScoreEl = document.getElementById("human-score")
-var botScoreEl = document.getElementById("bot-score")
-var rockImg = document.getElementById("rock")
-var paperImg = document.getElementById("paper")
-var scissorsImg = document.getElementById("scissors")
+var humanScoreEl = document.getElementById('human-score')
+var botScoreEl = document.getElementById('bot-score')
+var rockImg = document.getElementById('rock')
+var paperImg = document.getElementById('paper')
+var scissorsImg = document.getElementById('scissors')
+
+var choices = ["r", "p", "s"]
+var humanScore = 0
+var botScore = 0
+
+function startRound(event) {
+  var humanChosenImg = event.target
+  var humanChoice = humanChosenImg.dataset.letter  
+  
+  // randomly choose computerChoice
+  var random = Math.floor(Math.random() * choices.length)
+  var computerChoice = choices[random]
+  var computerChosenImg = document.querySelector('img[data-letter="'+ computerChoice + '"]')
+  
+  var result
+  if (humanChoice === computerChoice) {
+    result = "TIED!"
+  } else if (
+    humanChoice === "r" && computerChoice === "s" ||
+    humanChoice === "p" && computerChoice === "r" ||
+    humanChoice === "s" && computerChoice === "p"
+  ) {
+    humanScore++
+    result = "YOU WON!"
+  } else {
+    botScore++
+    result = "BOT WON!"
+}
+[rockImg, paperImg, scissorsImg].forEach(function(img){
+    img.style.display = 'none'
+})
+humanChosenImg.style.display = 'block'
+computerChosenImg.style.display = 'block'
+}
 
 
+//   // display (alert) comparison results (won, tied, lost round)
+//   alert("You " + result)
 
-// var choices = ["r", "p", "s"]
+//   // show stats
+//   alert("Stats:\nWins: " + wins + "\nLosses: " + losses + "\nTies: " + ties)
 
-
-// var wins = 0
-// var loss = 0
-// var tie = 0
-// var keepPlaying = true
-
-// while(keepPlaying){
-// // define array for choices [ r, p, s]
-
-// var rand = Math.floor(Math.random() * choices.length)
-
-// //prompt() playerChoice
-// var playerChoice = prompt("Please choose r, p, or s")
-// // if (humanChoice !== "r" || !)
-
-// console.log ("Player choice:", playerChoice)
-
-// if (!choices.includes(playerChoice)){
-//     alert("Bad Input")
-//     continue;
+//   keepPlaying = confirm("Want to play again?")
 // }
 
-// // define array for computerchoice
-// var computerChoice =choices [rand]
-// alert("Computer chose " + computerChoice )
-
-// var result
-
-// if (playerChoice === computerChoice) {
-//     tie++
-//     result = "tied 🙈"
-// } else if (
-//     playerChoice === "r" && computerChoice === "s" ||    
-//     playerChoice === "s" && computerChoice === "p" || 
-//     playerChoice === "p" && computerChoice === "r"
-//     ){
-//         wins++
-//         result = "Won! 🍾"
-//     } else {
-//         loss++
-//         result = "lost 😿"
-//     }
-
-// alert ("You " + result)
-
-// alert("Stats: \nWins: " + wins + " \nLosses " + loss + " \nTies" + tie)
-
-
-// keepPlaying = confirm("Want to play again")
-// }
-
-// // if playerChoice is not equal to "r" "p" "s" then print you lose
-
-// //randomly choose computerChoice
-
-
-    
-
-
-
-    
-// //compare choices 
-
-// //display (alert) results ("won, tied, lost round")
-
-
-
-// // show stats (number of wins, losses, ties)
-
-// // play again?
-//     // restart again
-// //else 
-//     //end game
+rockImg.addEventListener('click', startRound)
+paperImg.addEventListener('click', startRound)
+scissorsImg.addEventListener('click', startRound)
 
 

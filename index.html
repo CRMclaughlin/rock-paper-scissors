@@ -22,14 +22,32 @@
   </header>
 
   <main>
-      <div id="reslut">Results</div>
+    <div id="result"></div>
     <div id="choices-container">
-    <img id="rock" src="assets/rock.png" alt="rock" />
-    <img id="paper" src="assets/paper.png" alt="paper" />
-    <img id="scissors" src="assets/scissors.png" alt="scissors" />
+      <img 
+        id="rock" 
+        class="choice" 
+        src="assets/rock.png" 
+        alt="rock" 
+        data-letter="r" 
+      />
+      <img
+        id="paper" 
+        class="choice" 
+        src="assets/paper.png" 
+        alt="paper" 
+        data-letter="p" 
+      />
+      <img
+        id="scissors"
+        class="choice"
+        src="assets/scissors.png"
+        alt="scissors"
+        data-letter="s"
+      />
     </div>
   </main>
-
+  
   <script src="game.js"></script>
 </body>
 </html>
