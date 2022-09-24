@@ -12,7 +12,14 @@ var rand = Math.floor(Math.random() * choices.length)
 
 //prompt() playerChoice
 var playerChoice = prompt("Please choose r, p, or s")
+// if (humanChoice !== "r" || !)
+
 console.log ("Player choice:", playerChoice)
+
+if (!choices.includes(playerChoice)){
+    alert("Bad Input")
+    continue;
+}
 
 // define array for computerchoice
 var computerChoice =choices [rand]

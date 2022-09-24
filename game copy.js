@@ -11,6 +11,8 @@ var tie = 0
 var choices = ["r", "p", "s"]
 
 var playerChoice = prompt("Please choose r, p, or s")
+if (playerChoice == choices){
+}else prompt("Please select r, p, or s to start")
     
 
 //prompt() playerChoice
