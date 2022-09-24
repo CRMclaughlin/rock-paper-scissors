@@ -57,8 +57,17 @@
   .choice {
     cursor: pointer;
     transition: transform 260ms ease-out;
+    /* background: gold; */
   }
 
   .choice:hover {
     transform: scale(1.2);
+  }
+
+  .choice img {
+    display: block;
+  }
+
+  .loser {
+    opacity: .45;
   }

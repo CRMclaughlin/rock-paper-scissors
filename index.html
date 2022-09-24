@@ -15,36 +15,35 @@
     <div>
       Human: <span id="human-score">0</span>
     </div>
-    <h1>Rock Paper Scissors</h1>
+    <h1 id="result">Rock Paper Scissors</h1>
     <div>
       Bot: <span id="bot-score">0</span>
     </div>
   </header>
 
   <main>
-    <div id="result"></div>
+    
     <div id="choices-container">
+        <div id="rock" class="choice" data-letter="r">
       <img 
-        id="rock" 
-        class="choice" 
         src="assets/rock.png" 
         alt="rock" 
-        data-letter="r" 
-      />
-      <img
-        id="paper" 
-        class="choice" 
-        src="assets/paper.png" 
+        />
+    </div>
+      
+    <div id="paper" class="choice" data-letter="p">
+        <img
+         src="assets/paper.png" 
         alt="paper" 
-        data-letter="p" 
-      />
+        />
+    </div>
+        
+    <div id="scissors" class="choice"  data-letter="s">
       <img
-        id="scissors"
-        class="choice"
         src="assets/scissors.png"
         alt="scissors"
-        data-letter="s"
-      />
+         />
+     </div>
     </div>
   </main>
   
