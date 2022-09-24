@@ -1,0 +1,13 @@
+:root {
+    --tangerine: #FFA69E;
+    --eggshell: #FAF3DD;
+    --aeroBlue: #B8F2E6;
+    --powderBlue: #AED9E0;
+    --blackCoral: #5E6472;
+}
+
+body {
+    color: var(--blackCoral)
+    
+}
+
